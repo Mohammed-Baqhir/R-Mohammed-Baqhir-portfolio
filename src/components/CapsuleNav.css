@@ -1,0 +1,140 @@
+/* CapsuleNav.css */
+
+/* ── Desktop floating capsule — bottom center ── */
+.capsule-nav {
+  position: fixed;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 6px 10px;
+  background: rgba(13, 13, 20, 0.82);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid var(--border-hover);
+  border-radius: var(--radius-pill);
+  box-shadow:
+    0 8px 32px rgba(0,0,0,0.5),
+    0 0 0 1px rgba(255,255,255,0.04),
+    inset 0 1px 0 rgba(255,255,255,0.06);
+}
+
+.capsule-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: var(--radius-pill);
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color var(--transition-fast);
+  z-index: 1;
+  white-space: nowrap;
+}
+
+.capsule-item:hover {
+  color: var(--text-primary);
+}
+
+.capsule-item--active {
+  color: #fff;
+}
+
+.capsule-pill {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-pill);
+  background: var(--accent);
+  z-index: -1;
+  box-shadow: 0 0 16px var(--accent-glow);
+}
+
+.capsule-label {
+  /* hide on small screens */
+}
+
+/* ── Mobile FAB ── */
+.mobile-fab {
+  display: none;
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 101;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px var(--accent-glow);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+.mobile-fab:hover {
+  transform: scale(1.08);
+}
+
+/* ── Mobile menu ── */
+.mobile-menu {
+  position: fixed;
+  bottom: 82px;
+  right: 24px;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: rgba(13,13,20,0.95);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--border-hover);
+  border-radius: var(--radius-xl);
+  padding: 8px;
+  min-width: 160px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.6);
+}
+
+.mobile-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-align: left;
+}
+.mobile-menu-item:hover {
+  background: var(--bg-card-hover);
+  color: var(--text-primary);
+}
+.mobile-menu-item--active {
+  background: var(--accent-glow);
+  color: var(--accent-light);
+}
+
+/* ── Responsive ── */
+@media (max-width: 720px) {
+  .capsule-nav { display: none; }
+  .mobile-fab  { display: flex; }
+}
+
+@media (max-width: 900px) {
+  .capsule-label { display: none; }
+  .capsule-item  { padding: 9px 12px; }
+}

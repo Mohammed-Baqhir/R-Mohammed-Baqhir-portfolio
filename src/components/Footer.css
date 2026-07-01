@@ -1,0 +1,57 @@
+/* Footer.css */
+.footer {
+  border-top: 1px solid var(--border);
+  padding: 40px 0 100px; /* bottom padding for capsule nav */
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+}
+
+.footer-brand {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.footer-sub {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.footer-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px; height: 36px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  text-decoration: none;
+  background: transparent;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+.footer-icon:hover {
+  border-color: var(--accent);
+  color: var(--accent-light);
+  background: var(--accent-glow);
+}
+
+.footer-copy {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
