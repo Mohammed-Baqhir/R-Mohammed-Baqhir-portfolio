@@ -22,7 +22,7 @@ export const personal = {
   phone: '+91 70923 07860',
   github: 'https://github.com/Mohammed-Baqhir',
   linkedin: 'https://www.linkedin.com/in/mohammed-baqhir/',
-  resumeFile: '/resume.pdf',
+  resumeFile: '/resume.pdf?v=' + new Date().getTime(),
   photo: '/avatar.jpg',
 };
 
